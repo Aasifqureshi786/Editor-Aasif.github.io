@@ -1,0 +1,104 @@
+
+h1 {
+    color: rgb(0, 204, 255);
+    box-shadow: inset;
+    width: 193px;
+    min-width: min-content;
+    height: 40px;
+    min-height: min-content;
+    border: 3px solid #f60,
+    #ffff00,
+    #66ff00,
+    #00ffff,
+    #0066ff,
+    #ff0055,;
+    border-radius: 13px;
+    text-align: center;
+}
+
+body {
+    background-image: url(../../Pictures/editing.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+header{
+    font-family: cursive,italic;
+}
+.background-with-filter{
+    background-image: url(../../Pictures/editing.jpg);
+    background-size: cover;
+    filter: brightness(70%);
+
+}
+.animated-border-box{
+    position:relative;
+    width: 193px;
+    height: 40px;
+   border-color:#f60,
+    #ffff00,
+    #66ff00,
+    #00ffff,
+    #0066ff,
+    #ff0055,;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 13px;
+    overflow: hidden;
+    border: opacity(100%);
+    border: brightness(100%)
+    visua
+}
+.animated-border-box::before{
+    content: "PORTFOLIO";
+    position:absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: conic-gradient(from var(--angle),
+    #ff0055,
+    #f60,
+    #ffff00,
+    #66ff00,
+    #00ffff,
+    #0066ff,
+    #ff0055,);
+    color: rotate 4s linear infinite;
+    border-radius: 13px;
+    z-index: -1;
+}
+@keyframes rotate {
+   from{
+    transform: rotate(0deg);
+   }
+ to{
+     transform: rotate(360deg);
+    --angle:360deg;
+        rotate: var(--angle);
+        motion-rotation: auto;
+    }
+}
+@property --angle {
+    syntax:"<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.animated-border-box::after{
+    content: "PORTFOLIO";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: inherit;
+    border-radius: 13px;
+    z-index: -2;
+    filter: blur(20px);
+    opacity: 0.8;
+    animation: rotate 4s linear infinite;
+    border: opacity(100%);
+    border: brightness(100%);
+}
